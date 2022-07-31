@@ -24,8 +24,8 @@ function onInputChange(e) {
 };
 
 function onSubmitForm(e) {
-  console.log(JSON.parse(localStorage.getItem('feedback-form-state')));
   e.preventDefault();
+  console.log(JSON.parse(localStorage.getItem('feedback-form-state')));
   e.currentTarget.reset();
   localStorage.removeItem('feedback-form-state');
 };
