@@ -41,22 +41,17 @@ function onSubmitForm(e) {
 
 function dataFromLocalStorage() {
   const data = JSON.parse(localStorage.getItem(STORAGE_KEY));
-  // if (data) {
-  // email.value = data.email;
-  // message.value = data.message;
-  // }
   
   if (data.email === undefined) {
      email.value = '';
      message.value = data.message;
-  } else
-    if (data.message === undefined) {
+  } else if (data.message === undefined) {
     email.value = data.email;
     message.value = '';
-    } else
+  } else {
     email.value = data.email;
     message.value = data.message;
-
+    }
 };
 
 
