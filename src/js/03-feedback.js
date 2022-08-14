@@ -49,18 +49,22 @@ function onSubmitForm(e) {
 function dataFromLocalStorage() {
   const dataStorage = localStorage.getItem(STORAGE_KEY);
   const data = JSON.parse(dataStorage);
-  if (data === null) {
-    return;
-} else if (data.email === undefined) {
-     email.value = '';
-    message.value = data.message;
-  } else if (data.message === undefined) {
-    email.value = data.email;
-    message.value = '';
-  } else {
-    email.value = data.email;
-    message.value = data.message;
-    }
+  if (data) {
+    email.value = data.email || '';
+    message.value = data.message || '';
+  }
+//   if (data === null) {
+//     return;
+// } else if (data.email === undefined) {
+//      email.value = '';
+//     message.value = data.message;
+//   } else if (data.message === undefined) {
+//     email.value = data.email;
+//     message.value = '';
+//   } else {
+//     email.value = data.email;
+//     message.value = data.message;
+//     }
 };
 
 
