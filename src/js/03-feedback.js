@@ -43,10 +43,11 @@ function onSubmitForm(e) {
 };
 
 function dataFromLocalStorage() {
-  const data = JSON.parse(localStorage.getItem(STORAGE_KEY));
+  const dataStorage = localStorage.getItem(STORAGE_KEY);
+  const data = JSON.parse(dataStorage);
   if (data === null) {
     return;
-  } else if (data.email === undefined) {
+} else if (data.email === undefined) {
      email.value = '';
      message.value = data.message;
   } else if (data.message === undefined) {
