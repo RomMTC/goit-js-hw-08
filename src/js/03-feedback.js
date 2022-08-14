@@ -24,10 +24,10 @@ formRef.addEventListener('submit', onSubmitForm);
 dataFromLocalStorage();
 
 function onInputChange(e) {
-    formData[e.target.name] = e.target.value;
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+   formData[e.target.name] = e.target.value;
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
   // console.log(e.target.value);
-  // console.log(localStorage);
+  console.log(localStorage);
 };
 
 function onSubmitForm(e) {
