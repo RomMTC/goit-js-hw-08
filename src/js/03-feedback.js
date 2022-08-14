@@ -15,8 +15,8 @@ const formRef = document.querySelector('.feedback-form');
 const email = document.querySelector('.feedback-form input');
 const message = document.querySelector('.feedback-form textarea');
   
-const formData = {};
 const STORAGE_KEY = 'feedback-form-state';
+const formData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
 
 formRef.addEventListener('input', throttle(onInputChange, 500));
 formRef.addEventListener('submit', onSubmitForm);
@@ -40,6 +40,10 @@ function onSubmitForm(e) {
   console.log(formData);
   e.currentTarget.reset();
   localStorage.removeItem(STORAGE_KEY);
+  for (const prop of Object.keys(formData)) {
+  delete formData[prop];
+  };
+  // console.log('Очистка formData', formData);
 };
 
 function dataFromLocalStorage() {
