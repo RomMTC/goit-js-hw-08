@@ -27,7 +27,7 @@ function onInputChange(e) {
    formData[e.target.name] = e.target.value;
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
   // console.log(e.target.value);
-  console.log(localStorage);
+  // console.log(localStorage);
 };
 
 function onSubmitForm(e) {
@@ -49,7 +49,7 @@ function dataFromLocalStorage() {
     return;
 } else if (data.email === undefined) {
      email.value = '';
-     message.value = data.message;
+    message.value = data.message;
   } else if (data.message === undefined) {
     email.value = data.email;
     message.value = '';
